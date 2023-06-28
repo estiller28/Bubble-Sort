@@ -6,11 +6,12 @@ class ArrayCalculation {
         $this->arr = $arr;
     }
 
-    public function bubbleSort() {
+    public function bubbleSort(){
         $n = count($this->arr);
-        for ($i = 0; $i < $n - 1; $i++) {
-            for ($j = 0; $j < $n - $i - 1; $j++) {
-                if ($this->arr[$j] > $this->arr[$j + 1]) {
+
+        for($i = 0; $i < $n - 1; $i++){ //4
+            for($j = 0; $j < $n - $i -1; $j++){ //4
+                if($this->arr[$j] > $this->arr[$j + 1]){
                     $temp = $this->arr[$j];
                     $this->arr[$j] = $this->arr[$j + 1];
                     $this->arr[$j + 1] = $temp;
@@ -59,10 +60,10 @@ $output = new ArrayOutput($arr);
 $output->arrayOutput();
 [$median, $largest] = $output->arrayOutput();
 
-echo "Input array: ". implode(",", $arr). "<br>";
-echo "Sorted array: ". implode(",", $sortedArr). "<br>";
-echo "\n Median: " .$median. "<br>";
-echo "\n Largest: " .$largest. "<br>";
+echo "Input array: [". implode(",", $arr). "]<br>";
+echo "Sorted array: [". implode(",", $sortedArr). "]<br>";
+echo "Median: " .$median. "<br>";
+echo "Largest: " .$largest. "<br>";
 
 
 ?>
