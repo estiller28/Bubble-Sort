@@ -34,7 +34,35 @@ class ArrayCalculation {
     }
 }
 
+class ArrayOutput {
+    private $calculate;
 
+    public function __construct($arr) {
+        $this->calculate = new ArrayCalculation($arr);
+    }
+
+    public function arrayOutput() {
+        $this->calculate->bubbleSort();
+        $median = $this->calculate->getMedian();
+        $largest = $this->calculate->getLargest();
+        return [$median, $largest];
+    }
+}
+
+// Input array (parameters)
+$arr = [5, 2, 9, 1, 7];
+
+$sortArr = new ArrayCalculation($arr);
+$sortedArr = $sortArr->bubbleSort();
+$output = new ArrayOutput($arr);
+
+$output->arrayOutput();
+[$median, $largest] = $output->arrayOutput();
+
+echo "Input array: ". implode(",", $arr). "<br>";
+echo "Sorted array: ". implode(",", $sortedArr). "<br>";
+echo "\n Median: " .$median. "<br>";
+echo "\n Largest: " .$largest. "<br>";
 
 
 ?>
